@@ -1,0 +1,36 @@
+{
+  "name": "cr-er-une-api-pour-g-rer-une-boutique-e-commerce-godwin-akakpo",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/TtQxlkUu)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usdscommunity/cr-er-une-api-pour-g-rer-une-boutique-e-commerce-Godwin-AKAKPO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/usdscommunity/cr-er-une-api-pour-g-rer-une-boutique-e-commerce-Godwin-AKAKPO/issues"
+  },
+  "homepage": "https://github.com/usdscommunity/cr-er-une-api-pour-g-rer-une-boutique-e-commerce-Godwin-AKAKPO#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.10",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.0"
+  }
+}
