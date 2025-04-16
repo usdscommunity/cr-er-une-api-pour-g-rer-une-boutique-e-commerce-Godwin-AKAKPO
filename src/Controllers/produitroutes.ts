@@ -1,7 +1,7 @@
 import express from 'express';
 import {Request, Response} from 'express';
-import {Produit} from './modeles/Produit';
-import {sql_db_pool_promise} from "./mysql";
+import {Produit} from '../models/Produit';
+import {sql_db_pool_promise} from "../database/mysql";
 
 //const appExpress = express();
 const produitRouter = express.Router();
@@ -42,14 +42,14 @@ produitRouter.get("", async(req : Request, res :Response)  =>{
     }
 });
 
-//RETRIEVE : Récupérer un produit par son ID 
+//RETRIEVE : Récupérer un produit par son ID   i
 produitRouter.get("/:id", async(req : Request, res :Response)  =>{
     const id = req.params['id'];
 
     try {
         const sqlRequest : string = "SELECT * FROM produit WHERE id = ?";
         const [result] = await sql_db_pool_promise.execute(sqlRequest, [id])as any[];
-        if (result['length'] == 0){
+        if (result['length'] === 0){
             res.status(404).json({message : "Produit non retrouvé "})
         }
         res.status(200).json(result);
@@ -95,7 +95,7 @@ produitRouter.delete("/:id", async(req : Request, res :Response)  =>{
             sqlRequest,
             [id]
         )as any[];
-        if (result['affectedRows'] == 0){
+        if (result['affectedRows'] === 0){
             res.status(404).json({message : "Produit non retrouvé "})
         } 
         res.status(201).json({message: "Produit supprimé avec succès !", Produit: produit, result:result});

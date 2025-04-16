@@ -1,7 +1,7 @@
 import express from 'express';
 import {Request, Response} from 'express';
-import {Category} from './modeles/Category';
-import {sql_db_pool_promise} from "./mysql";
+import {Category} from '../models/Category';
+import {sql_db_pool_promise} from "../database/mysql";
 
 //const appExpress = express();
 const categoryRouter = express.Router();
@@ -74,7 +74,7 @@ categoryRouter.put("/:id", async(req : Request, res :Response)  =>{
             sqlRequest,
             [category.nom, category.description, id]
         )as any[];
-       if (result['affectedRows'] == 0){
+       if (result['affectedRows'] === 0){
             res.status(404).json({message : "Categorie non retrouvé "})
         }
         res.status(201).json({message: "Categorie mis à jour avec succès !", category: category, result:result});

@@ -1,7 +1,7 @@
 import express from 'express';
-import {apiCategoryRouter} from "./categoryroutes";
-import {apiProduitRouter} from "./produitroutes";
-import {apisearchesproduitRouter} from "./searchesproduitroutes"
+import {apiCategoryRouter} from "./Controllers/categoryroutes";
+import {apiProduitRouter} from "./Controllers/produitroutes";
+import {apisearchesproduitRouter} from "./Controllers/searchesproduitroutes"
 const appExpress = express();
 
 appExpress.use(express.json());
